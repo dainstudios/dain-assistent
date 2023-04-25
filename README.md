@@ -1,2 +1,2 @@
-# dain-assistent
-An AI assistend based on SST -> GTPx -> TTS
+# dain-assistant
+An AI assistant based on SST -> GTPx -> TTS
