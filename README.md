@@ -19,6 +19,12 @@ OPENAI_ORGANIZATION=org-T3LbgBaVGfLP5QJ5wQCSWc0z
 ## Installation
 ```
 sudo apt-get install portaudio19-dev python-all-dev python3-all-dev && sudo pip install pyaudio
+
+pip install -r requirements.txt
+
+or
+
+poetry install
 ```
 ## Usage
 
