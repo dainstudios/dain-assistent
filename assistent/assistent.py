@@ -29,7 +29,7 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--name', default='Silvio', type=str)
     parser.add_argument('--name_ai', default='Lemon', type=str)
-    parser.add_argument('--language', default='english', type=str)
+    parser.add_argument('--language', default='german', type=str)
     return parser.parse_args()
 
 def main():
