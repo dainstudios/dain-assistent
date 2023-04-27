@@ -31,11 +31,18 @@ class TTS:
         else:
             return
 
+        if 'language' in kwargs:
+            language = kwargs['language']
+            language = language if language in self.languages.keys() else 'english'
+            voice = self.languages[language]
+        else:
+            voice = self.voice
+
         audio_config = speechsdk.audio.AudioOutputConfig(use_default_speaker=self.use_default_speaker,
                                                          filename=self.filename)
 
         # The language of the voice that speaks.
-        speech_config.speech_synthesis_voice_name = self.voice
+        speech_config.speech_synthesis_voice_name = voice
 
         speech_synthesizer = speechsdk.SpeechSynthesizer(speech_config=speech_config, audio_config=audio_config)
         speech_synthesis_result = speech_synthesizer.speak_text_async(text).get()

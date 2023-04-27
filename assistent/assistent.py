@@ -17,13 +17,17 @@ class Assistent:
 
     def run(self):
         while True:
-            text = self.stt()
-            if text is not None:
-                print(textwrap.fill(f'{args.name}: {text} \n', width=80))
-                text += f' Only answer in {self.language}. Call me by my name {self.name}'
-                text = self.gpt.request(text)
-                print(textwrap.fill(f'{args.name_ai}: {text} \n', width=80))
-                self.tts(text=text)
+            try:
+                text = self.stt()
+                if text is not None:
+                    print(textwrap.fill(f'{args.name}: {text} \n', width=80))
+                    self.tts(text=text, language='english')
+                    text += f' Only answer in {self.language}. Call me by my name {self.name}'
+                    text = self.gpt.request(text)
+                    print(textwrap.fill(f'{args.name_ai}: {text} \n', width=80))
+                    self.tts(text=text)
+            except:
+                self.tts(text='The model is out of business!', language='english')
 
 def parse_args():
     parser = argparse.ArgumentParser()
