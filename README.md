@@ -9,7 +9,7 @@ language : Language (english, german, finnish, spanish, italy, french)
 # API-Keys
 Create an file ".env" and add the following keys 
 
-AZURE_SPEECH_KEY=4e094d57fb1949e89699b2ebf30e5ce0 
+AZURE_SPEECH_KEY=4e094d57fb1949e89699b2ebf30e5ce0 \
 AZURE_SPEECH_REGION=westeurope
 
 OPENAI=sk-xxx \
